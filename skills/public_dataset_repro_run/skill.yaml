@@ -1,0 +1,22 @@
+name: public_dataset_repro_run
+title: Public dataset reproduction run
+description: Run a reproducible analysis over public sequencing datasets with a full census, validated downloads, and segmented execution, when a research question depends on public runs.
+category: Work and knowledge
+include_in_prompt: false
+skill_improvement:
+  managed: true
+  status: active
+  evidence_handles:
+  - handoff:HS seg7 PRJEB43835 263 of 263 DLFAIL root cause ENA ERR registry paired end total (5229d1e3)
+  - handoff:user order stop retry fix validation rerun seg7 only (b32e733a)
+  - file:VALIDATION_FIX_20261119.md (8b0d965e)
+  - inventory:public_dataset_repro_run@3dab130cc34bf2f416d858f79340ed9550d58b14a1923048a9d81b6b3788605c
+  measurement:
+    proxy_metric_id: objective_success_rate
+    success_criterion: In the 30 day window, reproduction runs that follow this skill validate ENA paired end downloads under the total or exact half rule, no segment is declared wholly failed because a single file count equals half the registry total, and any rerun segment reconciles against its frozen run count without changing frozen parameters.
+    window_days: 30
+  needs_review: false
+  rationale: 'The skill published on 2026-11-18 instructs comparing each file record count with the registry read count. On 2026-11-19 that comparison failed all 263 runs of HS v10 segment 7 (PRJEB43835) as DLFAIL. Root cause was a registry convention, not bad downloads: for ENA paired end ERR runs the registry read count is the total across both files (111754 for ERR5554167) while each single file holds half (55877), and SRR registry counts are read pairs, so the first six segments were unaffected (handoff 5229d1e3). The user ordered retries stopped, the validation fixed, and only segment 7 rerun (b32e733a). The documented fix in VALIDATION_FIX_20261119.md (8b0d965e) accepts count equal to the registered count or exactly half of it, and the restarted segment validated its first runs at 55877 records. The current SKILL.md text, read this run, contains no such convention, so the published instruction still causes the failure. This update adds the convention, the scope limit, and a stop and fix rule for uniform segment wide count failures.'
+  review_after: 2026-12-19T18:07:47.730141+00:00
+  reviewed_at: 2026-11-19T18:07:47.730141+00:00
+  run_id: sirun_baf30def0c804d9e89cfc30a3117a9e7

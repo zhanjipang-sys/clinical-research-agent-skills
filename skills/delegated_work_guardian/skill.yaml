@@ -1,0 +1,21 @@
+name: delegated_work_guardian
+title: Delegated work guardian
+description: Keep delegated background work from going silent by pairing each dispatch with an independent monitor that checks deliverables and reports stalls.
+category: Work and knowledge
+include_in_prompt: false
+skill_improvement:
+  managed: true
+  status: active
+  evidence_handles:
+  - cron_run:401c4006-453f-4c3d-aea0-3d67fe56df9c
+  - assistant-msg-cdac7c68
+  - inventory:delegated_work_guardian@0ac6109f7fdc94b2a71af17e647244fe086aad7602034991f4803411ff5e433c
+  measurement:
+    proxy_metric_id: objective_success_rate
+    success_criterion: In the 30 day window, no long delegated work is launched from inside a scheduled worker run, and no cron run fails with the work not finished after spawning long work; wakes check state and report, and the main chat re-dispatches.
+    window_days: 30
+  needs_review: false
+  rationale: 'The 2026-11-17 wedding-stage2b2 resume wake (cron run 401c4006-453f-4c3d-aea0-3d67fe56df9c) FAILED with ''The worker reported that the work is not finished''. The in-session diagnosis (assistant-msg-cdac7c68) was that the cron run ended and cleaned up the long dispatch it had spawned: the dispatch verified alive at 05:16 with no credits spent, and a re-dispatch from the main chat at 05:25:59 worked, as had two earlier main-chat dispatches running 66 and 35 minutes. The managed delegated_work_guardian skill (rev 0ac6109f) tells the agent to launch through the tracked muse.exec route and to use cron.add as a monitor or expiry check, but it never states that a cron worker is not itself a launch route, so the wake pattern looked permitted. The fix adds that rule to the existing Launch section: launch only from the main chat, a wake only checks state and reports, and a cron failure of this shape means re-dispatch from the main chat. Checked and deliberately not proposed: the SINTAX stochastic disagreement (Codex 44/1166 ASV differ vs GLM 0) is still under an in-session arbitration protocol (A/B/C runs, three executors, monitor succeeded) with no concluded outcome, so codifying it now would be premature; manuscript_number_reconciliation covers deterministic number-vs-table reconciliation, not stochastic classifier runs. The X image-plus-poll split rule is already codified in MEMORY.md and the system social_publishing skill covers posting, so no new X skill. The Flow first-frame root cause and the clinical-photo-base rule are already in AGENTS.md and in the managed surgical_3d_keyframe_dispatch file (verified by reading it). local_anatomy was read in full and is a complete substantive skill, not a recoverable note. The deterministic rollup candidates (repeated handoff suppressions, recurring memory/relationships/goals/ideas failures) read as objective-loop prompt and cadence matters, not managed-skill failures, with no failure detail in the packet to ground a change.'
+  review_after: 2026-12-17T01:30:18.681338+00:00
+  reviewed_at: 2026-11-17T01:30:18.681338+00:00
+  run_id: sirun_09a4b71a2e424f65a431ff71ff5d5f73

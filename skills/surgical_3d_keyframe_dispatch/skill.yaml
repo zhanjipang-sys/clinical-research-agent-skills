@@ -1,0 +1,24 @@
+name: surgical_3d_keyframe_dispatch
+title: Surgical 3D keyframe dispatch
+description: Dispatch surgical 3D keyframes from traced reference illustrations with an operation mechanics review and no undisclosed executor substitution, when a surgical procedure needs demonstration keyframes before full rendering.
+category: Media
+include_in_prompt: false
+skill_improvement:
+  managed: true
+  status: active
+  evidence_handles:
+  - message:887af6d6-7a28-469c-9e1e-6c095eb24364
+  - message:assistant-msg-95c5bf04-b13b-490b-a4be-df16f931955a
+  - message:8f0ce861-301c-4c99-8d1e-228fb5550185
+  - message:d253a5a9-6258-4d08-9105-c4b5b52cefe2
+  - message:assistant-msg-24d8753b-2b99-1c3e-9f45-9b149685218b
+  - message:assistant-msg-1e2c1e93-5a54-407f-9749-7a0aad19a4e4
+  measurement:
+    proxy_metric_id: objective_success_rate
+    success_criterion: In the 30 day window, surgical 3D keyframe dispatches that follow this skill pass user review without a design correctness rejection attributed to a missing per-flap checklist item or to calling a flat schematic true 3D.
+    window_days: 30
+  needs_review: false
+  rationale: The generic operation mechanics review in the 2026-11-04 publication did not catch a flap type specific error. On 2026-11-17 the user vetoed a set of flat schematics presented as true 3D because the advancement flap design was wrong on its cut edges and dog-ear placement and the deliverable was mislabelled, and the whole set was downgraded to unapproved schematic drafts. The skill already covers reference first design, clinical photo base, keyframe gate and executor disclosure, but it has no per-flap checklist naming cut edges, pedicle cut state and dog-ear location, and no rule reserving true 3D for anatomical surfaces with a perspective camera. This update adds both, with the advancement three sides cut with distal pedicle uncut and dog-ear at the original farthest end corners, the bilobed tissue bridge uncut, and the leave long then trim tip rule. ADV-1 and V-Y gates passed after the veto, showing the gate works while these two gaps remain open.
+  review_after: 2026-12-18T01:43:45.250966+00:00
+  reviewed_at: 2026-11-18T01:43:45.250966+00:00
+  run_id: sirun_52074bd134a4406e88860048e3de7ee3

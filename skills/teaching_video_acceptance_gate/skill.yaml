@@ -1,0 +1,23 @@
+name: teaching_video_acceptance_gate
+title: Teaching video acceptance gate
+description: Accept a teaching video draft only after an independent literature recheck, a frame count reconciliation, and a pronunciation prescreen, when dispatching or receiving a teaching video build.
+category: Media
+include_in_prompt: false
+skill_improvement:
+  managed: true
+  status: active
+  evidence_handles:
+  - assistant-msg-067f5096
+  - assistant-msg-f3c6d248
+  - assistant-msg-f00b71a4
+  - assistant-msg-c6b94b42
+  - skill_search:teaching video final quality check frame count literature verification
+  measurement:
+    proxy_metric_id: objective_success_rate
+    success_criterion: In the window, teaching video drafts that follow this skill pass the independent literature recheck, the frame count reconciliation, and the pronunciation prescreen before user review, and no audit worthy run attributes a silent splice truncation, an unsourced literature claim, or a systematic pronunciation miss to a draft that followed the skill.
+    window_days: 30
+  needs_review: false
+  rationale: Four parallel teaching drafts in the 2026-11-02 night window showed the same three acceptance failures in different topics. A second independent check overturned bibliography entries in the tension reduction draft (assistant-msg-067f5096), the skin graft draft (assistant-msg-f3c6d248), and the negative pressure draft (assistant-msg-f00b71a4), and removed unsourced claims from the Z plasty draft (assistant-msg-c6b94b42). A stream copy splice silently truncated a skin graft segment with a zero exit code, and the fix was per clip image sequence reencoding plus frame count reconciliation. A pronunciation dictionary made most layer characters clear in the tension draft while the Z draft without it still had systematic mispronunciations. No existing skill covers these three gates together. The anchor check skill covers revision drift in text drafts, not literature rechecks, splice frame counts, or voice prescreening, and the skill search for this combination returned no overlapping skill. This proposal turns the repeated lessons into one dispatch and acceptance checklist, so a later draft is checked before it reaches the user.
+  review_after: 2026-12-03T01:29:54.419720+00:00
+  reviewed_at: 2026-11-03T01:29:54.419720+00:00
+  run_id: sirun_b8719fb5aca44303aa77ee964d3a5b72

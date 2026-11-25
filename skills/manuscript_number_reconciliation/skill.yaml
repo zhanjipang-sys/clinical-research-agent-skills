@@ -1,0 +1,21 @@
+name: manuscript_number_reconciliation
+title: Manuscript number reconciliation
+description: Reconcile every number in a research manuscript against its source tables before the draft goes to audit or to the user.
+category: Work and knowledge
+include_in_prompt: false
+skill_improvement:
+  managed: true
+  status: active
+  evidence_handles:
+  - handoff:trauma book audit 198 refs verified 117 errors 45 not found 7 non formal 17 unverified 12 (23087c02)
+  - handoff:lesson Chinese refs need 2 plus domestic DBs before not found and blind packages must include tables
+  - inventory:manuscript_number_reconciliation@fc894cb7dc5d7b5db4c9c7b6804224270c6396753056ee691556eabacc851109
+  measurement:
+    proxy_metric_id: objective_success_rate
+    success_criterion: In the 30 day window, manuscripts that follow this skill carry no reference marked not found on the strength of a single database search, every reference carries a recorded verdict, and every blind or independent audit package includes the manuscript tables, with no audit attributing a reversed not found verdict or an unchecked table number to a draft that followed the skill.
+    window_days: 30
+  needs_review: false
+  rationale: 'The trauma surgery book audit in this window closed with 198 references sorted into verified 117, bibliographic errors 45, not found 7, non formal 17, and unverified 12 (handoff 23087c02), and recorded two lessons: a Chinese language reference needs searches in at least two domestic Chinese bibliographic databases before a not found verdict, and blind audit packages must include the manuscript tables. The current skill, read this run at its inventory revision, verifies references against a source record and lists only PubMed under Websites, and it requires sending the reconciled table with the draft but never requires the manuscript tables themselves in an audit package. A not found verdict reached in one international index can therefore still be wrong for Chinese references, and an auditor can still be sent a package whose table numbers cannot be checked. This update adds the multi database rule, a per reference verdict record, and the audit package table requirement.'
+  review_after: 2026-12-19T18:07:47.730141+00:00
+  reviewed_at: 2026-11-19T18:07:47.730141+00:00
+  run_id: sirun_baf30def0c804d9e89cfc30a3117a9e7

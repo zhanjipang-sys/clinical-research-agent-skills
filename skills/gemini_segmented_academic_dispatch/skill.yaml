@@ -1,0 +1,26 @@
+name: gemini_segmented_academic_dispatch
+title: Gemini Segmented Academic Dispatch
+description: Route multi-file academic and long-form writing to Gemini web Work or Task mode in verified segments, so drafts are source-checked segment by segment instead of accepted from a one-shot chat draft.
+category: Work and knowledge
+include_in_prompt: false
+skill_improvement:
+  managed: true
+  status: active
+  evidence_handles:
+  - assistant-msg-8d816e45
+  - assistant-msg-04f34d99
+  - assistant-msg-feeb7d07
+  - assistant-msg-cc79dc69
+  - assistant-msg-0ff562a1
+  - assistant-msg-851c225e
+  - assistant-msg-f98930ed
+  - message:4280f58d
+  measurement:
+    proxy_metric_id: objective_success_rate
+    success_criterion: In the window, academic or long-form jobs routed by this skill are delivered in Work or Task segments that pass per-segment source and number verification before assembly, and no audit-worthy run attributes fabricated references, unsourced quantitative claims, or a misread trial result to a draft that followed the skill.
+    window_days: 30
+  needs_review: false
+  rationale: 'The SSc v1 model built in Gemini web Chat one-shot failed two independent audits (assistant-msg-8d816e45 found 9 confirmed, 7 wrong and 24 unsourced of 40 source items, including a misread focuSSced result and negative trials written as effective; assistant-msg-04f34d99 gave a concordant GLM FAIL). The same class of work succeeded when routed to Gemini web Work or Task mode in segments with main-session per-item verification: HS v10 manuscript parts 1 to 3 passed (assistant-msg-feeb7d07, assistant-msg-cc79dc69, assistant-msg-0ff562a1), the trauma book reached 91 of 91 chapters that way and its stage 3 supplement batch 1 passed 37 of 37 PMID checks (assistant-msg-851c225e), and the routing rule was refined after a misclassification admission (assistant-msg-f98930ed). Skill search returned no skill covering channel routing plus segmented dispatch: manuscript_number_reconciliation only reconciles numbers in a finished draft and ai_revision_anchor_check only guards revision drift. This skill codifies the routing decision, the per-segment brief contract, and the verify-before-next-segment gate.'
+  review_after: 2026-12-21T01:44:02.186395+00:00
+  reviewed_at: 2026-11-21T01:44:02.186395+00:00
+  run_id: sirun_27fd93fa75c64028b8341a4d92752049
